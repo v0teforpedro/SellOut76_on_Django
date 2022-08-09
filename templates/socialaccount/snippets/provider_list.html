@@ -1,0 +1,15 @@
+{% load socialaccount %}
+
+{% get_providers as socialaccount_providers %}
+
+{% for provider in socialaccount_providers %}
+    {% if provider.name == "Discord" %}
+      <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} btn btn-outline-primary btn-lg me-3"
+         href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+           <i class="bi bi-discord"></i>&nbsp;{{provider.name}}</a>
+    {% else %}
+        <a title="{{provider.name}}" class="socialaccount_provider {{provider.id}} btn btn-outline-danger btn-lg ms-3"
+         href="{% provider_login_url provider.id process=process scope=scope auth_params=auth_params %}">
+           <i class="bi bi-reddit"></i>&nbsp;{{provider.name}}</a>
+    {% endif %}
+{% endfor %}

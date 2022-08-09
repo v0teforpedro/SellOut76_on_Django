@@ -1,0 +1,78 @@
+{% extends "base.html" %} {% load socialaccount %}
+
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block main %}
+    <h1> Welcome, Dweller! ^_^</h1>
+    <br>
+    <h2 style="text-align: justify">
+        This web-app was created to help out <a href="https://fallout.bethesda.net/en/">"Fallout 76"</a>
+        players manage their weapon inventory, as well as finding new weapons for their own collection.
+    </h2>
+    <br>
+    <br>
+    <h3> Here you can perform following actions:</h3>
+    <br>
+
+    <div class="d-flex justify-content-around">
+        <div class="card text-dark bg-warning border-dark mb-3" style="width: 18rem;">
+            <img src="static/images/search.gif" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="redir" href="/search"><a href="/search">Search</a></h4>
+                <p class="card-text" style="text-align: justify">
+                    Gives you an option to search through other users inventories.
+                    You can make a specific request, by choosing all or some selection options.
+                </p>
+            </div>
+        </div>
+        <div class="card text-dark bg-warning border-dark mb-3" style="width: 18rem;">
+            <img src="/static/images/add.gif" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="redir"><a href="/add">Add</a></h4>
+                <p class="card-text" style="text-align: justify">
+                    This is the way to populate your own datatable with weapons you currently own.
+                    Application logic will prevent you from choosing and adding unobtainable prefixes for weapons.
+                </p>
+            </div>
+        </div>
+        <div class="card text-dark bg-warning border-dark mb-3" style="width: 18rem;">
+            <img src="/static/images/inventory.gif" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h4 class="redir"><a href="/inventory">Inventory</a></h4>
+                <p class="card-text" style="text-align: justify">
+                    Here, you can view all the weapons you've added into your table.
+                    Within this table, you can remove weapons you don't need,
+                    by clicking "trash bin" icon on corresponding row.
+                </p>
+            </div>
+        </div>
+{#        <div class="column">#}
+{#            <h4 class="redir"><a href="/search">Search</a></h4>#}
+{#            <p>#}
+{#                Gives you an option to search through other users inventories.#}
+{#                You can make a specific request, by choosing all or some selection options. Feeling lucky today?#}
+{#                Then feel free to browse all stuff your fellow dwellers have, by choosing just "type".#}
+{#            </p>#}
+{#        </div>#}
+{#        <div class="column">#}
+{#            <h4 class="redir"><a href="/add">Add</a></h4>#}
+{#            <p>#}
+{#                This is the way to populate your own datatable with weapons you currently own.#}
+{#                Application logic will prevent you from choosing and adding unobtainable prefixes for specific weapons.#}
+{#                So don't worry, I've got you covered, mate! ;)#}
+{#            </p>#}
+{#        </div>#}
+{#        <div class="column">#}
+{#            <h4 class="redir"><a href="/inventory">Inventory</a></h4>#}
+{#            <p>#}
+{#                Here, you can view all the weapons you've added into your table.#}
+{#                Within this table, you can remove weapons you don't need,#}
+{#                by clicking "trash bin" icon on corresponding row.#}
+{#                Also you can search through your entries, by typing keywords in "search field".#}
+{#            </p>#}
+{#        </div>#}
+    </div>
+{% endblock %}
+

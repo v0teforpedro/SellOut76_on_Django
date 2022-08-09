@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+{% load account socialaccount %}
+
+{% block title %}{% trans "Sign In" %}{% endblock %}
+
+{% block main %}
+
+<h1>{% trans "Sign In" %}</h1>
+<br>
+{% get_providers as socialaccount_providers %}
+
+<p>Please sign in with one of your existing third party accounts:</p>
+<br>
+<div class="socialaccount_providers">
+    {% include "socialaccount/snippets/provider_list.html" with process="login" %}
+</div>
+
+{% endblock %}
